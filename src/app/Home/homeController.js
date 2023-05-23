@@ -9,11 +9,11 @@ const {emit} = require("nodemon");
 
 /**
  * API No. 1
- * API Name : 전체 카테고리 조회 API 
+ * API Name : 홈 화면 조회 기능 API
  * [GET] /categories
  */
-exports.getCategories = async function (req, res) {
-    const allCategories = await categoryProvider.allCategoriesList();
+exports.getHome = async function (req, res) {
+    const home = await categoryProvider.allCategoriesList();
 
     return res.send(response(baseResponse.SUCCESS, allCategories));
 };

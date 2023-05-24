@@ -5,4 +5,7 @@ module.exports = function(app){
     // 유저 생성 기능
     app.post('/users/signup', user.signup);
 
+    // 유저 정보 수정 기능
+    app.post('/users/:userId', user.updateinfo);
+
 };

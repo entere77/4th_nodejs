@@ -28,3 +28,19 @@ exports.createUser = async function (name, email, phone_number, birth, sex, nick
         return errResponse(baseResponse.DB_ERROR);
     }
 };
+
+exports.updateUser = async function (userId, name, email, phone_number, birth, sex, nickname, img) {
+    try {
+       const connection = await pool.getConnection(async (conn)=>conn);
+
+       const InfoResult = await userDao.updateUserInfo(connection, userId, name, email, phone_number, birth, sex, nickname, img);
+       console.log('유저 수정 완료');
+       connection.release();
+
+       return response(baseResponse.SUCCESS);
+
+    } catch (err) {
+        logger.error(`App - postSignIn Service error\n: ${err.message} \n${JSON.stringify(err)}`);
+        return errResponse(baseResponse.DB_ERROR);
+    }
+};

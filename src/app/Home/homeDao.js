@@ -1,15 +1,15 @@
 // 유저 생성
-async function getCategories(connection) {
-    const allCategoriesInfoQuery =`
-          select * from category;
+async function getHome(connection) {
+    const homeInfoQuery =`
+          select * from product;
     `
-    const allCategoriesInfoRow = await connection.query(
-        allCategoriesInfoQuery
+    const homeInfoRow = await connection.query(
+        homeInfoQuery
     );
   
-    return allCategoriesInfoRow[0];
+    return homeInfoRow[0];
   }
   
   module.exports = {
-    getCategories,
+    getHome,
   };

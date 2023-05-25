@@ -5,10 +5,10 @@ const homeDao = require("./homeDao");
 
 // Provider: Read 비즈니스 로직 처리
 
-exports.allCategoriesList = async function (email) {
+exports.homeList = async function (email) {
     const connection = await pool.getConnection(async (conn) => conn);
-    const categoriesList = categoryDao.getCategories(connection);
+    const homeList = homeDao.getHome(connection);
     connection.release();
 
-    return categoriesList;
+    return homeList;
 };

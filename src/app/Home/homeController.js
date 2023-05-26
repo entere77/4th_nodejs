@@ -15,5 +15,23 @@ const {emit} = require("nodemon");
 exports.getHome = async function (req, res) {
     const home = await categoryProvider.allCategoriesList();
 
+        // 빈 값 체크
+        if (!name) {
+            return res.send(response(baseResponse.SIGNUP_EMAIL_EMPTY));
+        } else if (!email){
+            return res.send(response(baseResponse.SIGNUP_EMAIL_EMPTY));
+        } else if (!phone_number){
+            return res.send(response(baseResponse.SIGNUP_EMAIL_EMPTY));
+        } else if (!birth){
+            return res.send(response(baseResponse.SIGNUP_EMAIL_EMPTY));
+        } else if (!sex){
+            return res.send(response(baseResponse.SIGNUP_EMAIL_EMPTY));
+        } else if (!nickname){
+            return res.send(response(baseResponse.SIGNUP_EMAIL_EMPTY));
+        } else if (!img){
+            return res.send(response(baseResponse.SIGNUP_EMAIL_EMPTY));
+        }
+
+
     return res.send(response(baseResponse.SUCCESS, allCategories));
 };

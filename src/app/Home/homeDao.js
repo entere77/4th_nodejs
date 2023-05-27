@@ -1,5 +1,5 @@
 // 유저 생성
-async function getHome(connection) {
+async function getHomeList(connection) {
     const homeInfoQuery =`
           select * from product;
     `
@@ -11,5 +11,5 @@ async function getHome(connection) {
   }
   
   module.exports = {
-    getHome,
+    getHomeList,
   };

@@ -7,7 +7,7 @@ const homeDao = require("./homeDao");
 
 exports.homeList = async function (email) {
     const connection = await pool.getConnection(async (conn) => conn);
-    const homeList = homeDao.getHome(connection);
+    const homeList = homeDao.getHomeList(connection);
     connection.release();
 
     return homeList;

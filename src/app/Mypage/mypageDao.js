@@ -1,15 +1,15 @@
 // 유저 생성
-async function getHomeList(connection) {
-    const homeInfoQuery =`
+async function getMypageList(connection) {
+    const mypageInfoQuery =`
           select * from product;
     `
-    const homeInfoRow = await connection.query(
-        homeInfoQuery
+    const mypageInfoRow = await connection.query(
+        mypageInfoQuery
     );
   
-    return homeInfoRow[0];
+    return mypageInfoRow[0];
   }
   
   module.exports = {
-    getHomeList,
+    getMypageList,
   };

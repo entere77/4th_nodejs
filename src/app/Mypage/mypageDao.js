@@ -1,7 +1,7 @@
 // 유저 생성
 async function getMypageList(connection) {
     const mypageInfoQuery =`
-          select * from product;
+          select * from mypage;
     `
     const mypageInfoRow = await connection.query(
         mypageInfoQuery

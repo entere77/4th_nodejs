@@ -10,3 +10,19 @@ const {errResponse} = require("../../../config/response");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const {connect} = require("http2");
+
+exports.createUser = async function (name, email, phone_number, birth, sex, nickname, img) {
+    try {
+       const connection = await pool.getConnection(async (conn)=>conn);
+
+       const InfoResult = await userDao.createUserInfo(connection, name, email, phone_number, birth, sex, nickname, img);
+       console.log('유저 생성 완료');
+       connection.release();
+
+       return response(baseResponse.SUCCESS);
+
+    } catch (err) {
+        logger.error(`App - postSignIn Service error\n: ${err.message} \n${JSON.stringify(err)}`);
+        return errResponse(baseResponse.DB_ERROR);
+    }
+};

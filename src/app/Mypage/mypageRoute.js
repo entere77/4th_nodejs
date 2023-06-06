@@ -3,5 +3,8 @@ module.exports = function(app){
     const jwtMiddleware = require('../../../config/jwtMiddleware');
     
     // mypage 조회 기능
-    app.get('/mypage', mypage.getmypage);    
+    app.get('/mypage', mypage.getmypage);
+    
+    // mypage 관심목록 조회 기능
+    app.get('/mypage/heart', mypage.getheart);
 };

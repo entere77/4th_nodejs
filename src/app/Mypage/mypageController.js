@@ -17,3 +17,14 @@ exports.getMypage = async function (req, res) {
 
     return res.send(response(baseResponse.SUCCESS, mypage));
 };
+
+/**
+ * API No. 2
+ * API Name : mypage 관심목록 조회 기능
+ * [GET] /mypage/heart
+ */
+exports.getHeart = async function (req, res) {
+    const heart = await mypageProvider.heartList();
+
+    return res.send(response(baseResponse.SUCCESS, heart));
+};

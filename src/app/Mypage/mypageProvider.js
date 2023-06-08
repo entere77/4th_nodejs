@@ -12,3 +12,11 @@ exports.mypageList = async function (email) {
 
     return mypageList;
 };
+
+exports.heartList = async function (email) {
+    const connection = await pool.getConnection(async (conn) => conn);
+    const heartList = homeDao.getHeartList(connection);
+    connection.release();
+
+    return heartList;
+};

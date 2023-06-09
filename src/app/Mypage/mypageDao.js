@@ -13,3 +13,19 @@ async function getMypageList(connection) {
   module.exports = {
     getMypageList,
   };
+
+// 관심목록 조회 기능
+async function getHeartList(connection) {
+  const heartInfoQuery =`
+        select * from heart;
+  `
+  const heartInfoRow = await connection.query(
+      heartInfoQuery
+  );
+
+  return haertInfoRow[0];
+}
+
+module.exports = {
+  getHeartList,
+};

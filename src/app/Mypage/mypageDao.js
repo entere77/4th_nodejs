@@ -9,10 +9,6 @@ async function getMypageList(connection) {
   
     return mypageInfoRow[0];
   }
-  
-  module.exports = {
-    getMypageList,
-  };
 
 // 관심목록 조회 기능
 async function getHeartList(connection) {
@@ -27,5 +23,6 @@ async function getHeartList(connection) {
 }
 
 module.exports = {
+  getMypageList,
   getHeartList,
 };

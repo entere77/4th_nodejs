@@ -1,6 +1,6 @@
 const jwtMiddleware = require("../../../config/jwtMiddleware");
 const chatProvider = require("../../app/chatgory/chatProvider");
-const categoryService = require("../../app/chat/chatService");
+const chatService = require("../../app/chat/chatService");
 const baseResponse = require("../../../config/baseResponseStatus");
 const {response, errResponse} = require("../../../config/response");
 

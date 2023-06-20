@@ -12,3 +12,11 @@ exports.allChatsList = async function (email) {
 
     return chatsList;
 };
+
+exports.chatBySelect = async function (email) {
+    const connection = await pool.getConnection(async (conn) => conn);
+    const chatBySelect = chatDao.getChatBySelect(connection);
+    connection.release();
+
+    return chatBySelect;
+};
